@@ -4,7 +4,7 @@
 
 body {
   @media (min-width: 768px) {
-    background: url("dogs.webp");
+    background: url("/dogs.webp");
     background-size: 20vmax;
     background-position: bottom right;
     background-repeat: no-repeat;

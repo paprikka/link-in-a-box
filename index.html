@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link in a box - share Signal links on Twitter</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <h1 class="intro__title">
+          Link in a box. How to share Signal links on Twitter
+        </h1>
+        <p>
+          Twitter is blocking links to
+          <a href="https://signal.org" target="_blank">Signal</a>. Use this tool
+          to circumvent that.
+        </p>
+      </section>
+      <section class="tool tool-data-uri">
+        <h2>Package link into a data URI</h2>
+        <p>
+          Turn a link into a data URI. A data URI is a link that contains the
+          content of the link in the link itself. In our case this will be a
+          tiny page with a link poining to Signal.
+        </p>
+        <form id="tool-data-uri">
+          <div class="tool__field">
+            <label class="tool__label" for="link-input">Link to share:</label>
+            <input
+              class="tool__input"
+              type="text"
+              id="link-input"
+              name="link-input"
+              value="https://signal.me/#eu/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            />
+          </div>
+
+          <div class="tool__field">
+            <label class="tool__label" for="masked-link"
+              >Masked link (copy and share this):</label
+            >
+            <pre class="tool__input" id="masked-link"></pre>
+            <button class="tool__button" type="button" id="copy-masked-link">
+              Copy
+            </button>
+          </div>
+
+          <div class="tool__field">
+            <label class="tool__label" for="preview">Preview:</label>
+            <output class="tool__preview" id="preview"></output>
+          </div>
+        </form>
+      </section>
+
+      <section class="tool tool--url-replace">
+        <h2>Add a space to the URL</h2>
+        <p>
+          Replace
+          <span class="highlight"
+            >https://signal.me/#eu/P01wpU[...]EttS85C</span
+          >
+          with
+          <span class="highlight"
+            >https://signal .me/#eu/P01wpU[...]EttS85C</span
+          >
+        </p>
+        <p class="tool__status tool__status--working">
+          It works. It might be confusing to some users if they don't spot the
+          space in the link.
+        </p>
+      </section>
+      <section>
+        <h2>Note on privacy</h2>
+        <p>
+          <strong
+            >None of the data you paste here will leave your computer.</strong
+          >
+          I built this site in a way that makes it easy to verify how it works
+          by checking its source directly in a browser. Even if you don't code,
+          someone with basic web development skills should be able to verify
+          that.
+          <br /><br />
+          Also, the code is public and available here. Feel free to check the
+          code, share improvements.
+        </p>
+        <p>PS. I wrote this over 30 minutes, so be kind.</p>
+      </section>
+    </main>
+    <footer>
+      Made by 🐐 and
+      <a href="https://sonnet.io" target="_blank">Rafal</a>
+    </footer>
+  </body>
+</html>

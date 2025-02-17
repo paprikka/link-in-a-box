@@ -21,9 +21,7 @@ const preview = document.getElementById("preview");
 const renderUpdate = () => {
   const link = linkInput.value;
   const linkHTML = `<a href="${link}">${link}</a>`;
-  const dataUri = `data:text/html;charset=utf-8,${encodeURIComponent(
-    linkHTML
-  )}`;
+  const dataUri = `data:text/html;base64,${btoa(linkHTML)}`;
 
   maskedLink.textContent = dataUri;
 

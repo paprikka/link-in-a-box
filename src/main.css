@@ -15,7 +15,7 @@ body {
 main,
 footer {
   padding: var(--page-margin);
-  max-width: var(--page-width-narrow);
+  max-width: var(--page-width-mid);
   margin: 0 auto;
 }
 

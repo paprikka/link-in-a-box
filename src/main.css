@@ -2,11 +2,25 @@
 @import "./_reset.css";
 @import "./_global.css";
 
+body {
+  @media (min-width: 768px) {
+    background: url("dogs.webp");
+    background-size: 20vmax;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
 main,
 footer {
   padding: var(--page-margin);
   max-width: var(--page-width-narrow);
   margin: 0 auto;
+}
+
+section {
+  margin-block-end: var(--spacing-xxxl);
 }
 
 p {
@@ -23,7 +37,7 @@ h3 {
 form {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+  gap: var(--spacing-xxxl);
   margin-block: var(--spacing-l);
 }
 
@@ -45,6 +59,7 @@ output {
   display: flex;
   align-items: center;
   gap: var(--spacing-s);
+  word-break: break-all;
 }
 
 pre {
@@ -60,9 +75,9 @@ pre {
   white-space: pre-wrap;
 }
 .tool__status {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
+  gap: var(--spacing-s); */
 
   &::before {
     display: inline-block;
@@ -72,6 +87,7 @@ pre {
     background-color: var(--color-accent);
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
+    margin-inline-end: 0.5em;
   }
 }
 
@@ -87,6 +103,11 @@ pre {
   gap: var(--spacing-s);
 }
 
+.tool__label {
+  font-weight: var(--font-weight-black);
+  font-size: var(--s-2);
+}
+
 .tool__button {
   border: none;
   background-color: var(--color-text);
@@ -99,10 +120,35 @@ pre {
   & p:first-of-type {
     font-size: var(--s-1);
     line-height: var(--leading-tight);
+    margin-block-end: var(--spacing-xxl);
   }
 }
 .intro__title {
   font-size: var(--s-5);
   font-weight: 800;
   line-height: 1;
+}
+
+hr {
+  margin-block: var(--spacing-xxl);
+  border: 0;
+  border-top: 3px solid var(--color-text);
+  opacity: 1;
+}
+
+footer {
+  border-top: 3px solid var(--color-text);
+  padding: var(--spacing-xs);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-page-bg);
+}
+
+.highlight {
+  background-color: color-mix(in srgb, var(--color-text) 7%, transparent);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  font-family: var(--font-family-mono);
 }

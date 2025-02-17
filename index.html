@@ -17,17 +17,17 @@
           <a href="https://signal.org" target="_blank">Signal</a>. Use this tool
           to circumvent that.
         </p>
+        <img
+          src="example.png"
+          alt="a screenshot of a Twitter post with a link"
+        />
       </section>
       <section class="tool tool-data-uri">
-        <h2>Package link into a data URI</h2>
-        <p>
-          Turn a link into a data URI. A data URI is a link that contains the
-          content of the link in the link itself. In our case this will be a
-          tiny page with a link poining to Signal.
-        </p>
         <form id="tool-data-uri">
           <div class="tool__field">
-            <label class="tool__label" for="link-input">Link to share:</label>
+            <label class="tool__label" for="link-input"
+              >1. Paste the link here:</label
+            >
             <input
               class="tool__input"
               type="text"
@@ -35,27 +35,47 @@
               name="link-input"
               value="https://signal.me/#eu/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             />
+            <label class="" for="preview">Preview:</label>
+            <output class="tool__preview" id="preview"></output>
           </div>
 
           <div class="tool__field">
             <label class="tool__label" for="masked-link"
-              >Masked link (copy and share this):</label
+              >2. Copy the masked link:</label
             >
             <pre class="tool__input" id="masked-link"></pre>
             <button class="tool__button" type="button" id="copy-masked-link">
               Copy
             </button>
           </div>
-
           <div class="tool__field">
-            <label class="tool__label" for="preview">Preview:</label>
-            <output class="tool__preview" id="preview"></output>
+            <label class="tool__label">3. Share it</label>
+            <p>The link should copy-pasted</p>
+            <img
+              src="copy.png"
+              alt="a screenshot of a Twitter post with a link"
+            />
           </div>
         </form>
-      </section>
 
+        <h2>How it works</h2>
+        <p>
+          Turn a link into a data URI. A data URI is a link that contains the
+          content of the link in the link itself. In our case this will be a
+          tiny page with a link poining to Signal.
+          <br />
+          This is inspired by an older project of mine:
+          <a
+            href="https://sonnet.io/projects#:~:text=VIEW%20CODE-,Laconic,-!%20(a%20Twitter%20CDN"
+            target="_blank"
+            >Laconic</a
+          >.
+        </p>
+      </section>
+      <!-- <hr /> -->
+      <h2>Other things you can try</h2>
       <section class="tool tool--url-replace">
-        <h2>Add a space to the URL</h2>
+        <h3>Add a space to the URL</h3>
         <p>
           Replace
           <span class="highlight"
@@ -67,15 +87,38 @@
           >
         </p>
         <p class="tool__status tool__status--working">
-          It works. It might be confusing to some users if they don't spot the
-          space in the link.
+          It works. Keep in mind that it might be hard for some people to spot
+          the space in a link. The main reason I'm using the box is that it's
+          explicit.
         </p>
       </section>
+      <section class="tool tool--qr-code">
+        <h3>Share as a QR code</h3>
+        <p>Turn the link into a QR code using some of the free tools online.</p>
+        <p class="tool__status tool__status--working">
+          It works. But, you'll need a QR code reader to follow the link.
+        </p>
+      </section>
+      <section class="tool tool--steganography">
+        <h3>Steganography</h3>
+        <p>Hide the link in a poem.</p>
+        <p>
+          Half-baked thought: Generate a (terrible) poem using an LLM, then hide
+          the fragments of the link inside it. You'll need a separate tool to
+          convert the poem back into its original shape easily though.
+        </p>
+        <p class="tool__status tool__status--working">
+          Sure why not. We did something like this
+          <a href="https://tidings.potato.horse/about" target="_blank">once</a>,
+          we can do it again.
+        </p>
+      </section>
+      <!-- <hr /> -->
       <section>
         <h2>Note on privacy</h2>
         <p>
           <strong
-            >None of the data you paste here will leave your computer.</strong
+            >None of the data you paste here should leave your computer.</strong
           >
           I built this site in a way that makes it easy to verify how it works
           by checking its source directly in a browser. Even if you don't code,
